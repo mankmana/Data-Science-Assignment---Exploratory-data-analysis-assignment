@@ -40,3 +40,37 @@ I plotted traffic volume over time and created a histogram of the traffic-volume
 - The traffic-volume distribution is not symmetric and contains multiple concentration areas.
 - Traffic volume values extend from near zero to approximately 7,280.
 
+## Step 8: Analyze Traffic by Hour and Day
+
+I calculated average traffic volume by hour of day and day of week.
+
+- Traffic volume is lowest during overnight hours.
+- Traffic volume increases sharply during the morning and reaches a high level during the afternoon.
+- Traffic volume declines during the evening.
+- Weekday traffic is higher than weekend traffic.
+- Friday has the highest average among the displayed days, while Sunday has the lowest.
+
+## Step 9: Identify Numerical Outliers
+
+I used the IQR method to identify potential outliers in the main numerical columns.
+
+- `temp`: 10 potential outliers (0.02%).
+- `rain_1h`: 3,467 potential outliers (7.19%).
+- `snow_1h`: 63 potential outliers (0.13%).
+- `clouds_all`: 0 potential outliers.
+- `traffic_volume`: 0 potential outliers.
+
+The `rain_1h` column has the largest number of potential outliers and requires attention during anomaly handling.
+
+## Step 10: Review Extreme Traffic Values
+
+I reviewed the highest rainfall values and summary percentiles for the numerical columns.
+
+- `temp` ranges from 0 to approximately 310.07, with very few extreme observations.
+- `rain_1h` has a median of 0, a 99th percentile of approximately 237.98, and a maximum of 9,831.30.
+- `snow_1h` ranges from 0 to 0.51, with a small number of potential outliers.
+- `clouds_all` remains within the expected 0–100 range.
+- `traffic_volume` ranges from 0 to 7,280 and was not flagged as an IQR outlier.
+
+The extreme rainfall records were identified for anomaly-handling decisions.
+

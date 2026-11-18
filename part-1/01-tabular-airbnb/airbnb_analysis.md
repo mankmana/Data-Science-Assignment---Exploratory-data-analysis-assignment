@@ -44,3 +44,36 @@ I plotted histograms for price, minimum nights, number of reviews, reviews per m
 - Minimum nights is heavily concentrated at low values and has a long right tail.
 - Number of reviews and reviews per month are right-skewed, with most listings having relatively low values.
 - Availability has many listings with low availability and another concentration near full-year availability.
+
+## Step 8: Analyze Airbnb Categories
+
+I compared the number of listings by room type and neighbourhood group.
+
+- Entire homes/apartments and private rooms represent most of the listings.
+- Shared rooms represent a much smaller portion of the dataset.
+- Manhattan and Brooklyn have the largest number of listings.
+- Queens has fewer listings than Manhattan and Brooklyn, while the Bronx and Staten Island have the fewest listings.
+
+## Step 9: Identify Numerical Outliers
+
+I used the IQR method to identify potential outliers in the main numerical columns.
+
+- `price`: 2,972 potential outliers (6.08%).
+- `minimum_nights`: 6,607 potential outliers (13.51%).
+- `number_of_reviews`: 6,021 potential outliers (12.31%).
+- `reviews_per_month`: 1,793 potential outliers (3.67%).
+- `availability_365`: 0 potential outliers.
+
+The outlier counts were recorded for the data-cleaning and anomaly-handling stage.
+
+## Step 10: Review Extreme Airbnb Values
+
+I reviewed the highest values and summary percentiles for the numerical columns.
+
+- `price` ranges from 0 to 10,000, with several listings at extremely high prices.
+- `minimum_nights` ranges from 1 to 1,250, with some listings requiring unusually long stays.
+- `number_of_reviews` reaches 629, while most listings have much lower review counts.
+- `reviews_per_month` reaches 58.5 and has a strong concentration near lower values.
+- `availability_365` ranges from 0 to 365 and does not exceed the expected yearly limit.
+
+The extreme records were identified for anomaly-handling decisions.
