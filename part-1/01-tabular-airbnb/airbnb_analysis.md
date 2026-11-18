@@ -77,3 +77,27 @@ I reviewed the highest values and summary percentiles for the numerical columns.
 - `availability_365` ranges from 0 to 365 and does not exceed the expected yearly limit.
 
 The extreme records were identified for anomaly-handling decisions.
+
+## Step 11: Remove Duplicate Records
+
+I created a cleaned Airbnb DataFrame using `drop_duplicates()`.
+
+- Original rows: 48,895.
+- Cleaned rows: 48,895.
+- Rows removed: 0.
+
+## Step 12: Handle Missing Values
+
+I handled the missing Airbnb values before feature processing.
+
+- Missing text values in `name` and `host_name` were replaced with `Unknown`.
+- Missing `reviews_per_month` values were replaced with 0 because they represent listings without reviews.
+- A `has_review` indicator was added before filling missing review dates.
+- Missing `last_review` values were filled using the median review date.
+- The imputed dataset retained 48,895 rows.
+
+## Step 13: Encode Airbnb Categorical Features
+
+I converted `room_type` and `neighbourhood_group` into numerical indicator columns using one-hot encoding.
+
+- The encoded Airbnb dataset contains 48,895 rows and 21 columns.

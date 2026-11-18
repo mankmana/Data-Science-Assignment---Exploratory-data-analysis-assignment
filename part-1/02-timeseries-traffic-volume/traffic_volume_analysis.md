@@ -74,3 +74,26 @@ I reviewed the highest rainfall values and summary percentiles for the numerical
 
 The extreme rainfall records were identified for anomaly-handling decisions.
 
+## Step 11: Remove Duplicate Records
+
+I created a cleaned traffic DataFrame using `drop_duplicates()`.
+
+- Original rows: 48,204.
+- Cleaned rows: 48,187.
+- Rows removed: 17.
+
+## Step 12: Handle Missing Values
+
+I treated missing values in the traffic dataset before feature processing.
+
+- Missing values in `holiday` were replaced with `No Holiday`, since blank values represent regular days.
+- The imputed dataset retained 48,187 rows.
+
+## Step 13: Create Traffic Time Features and Encode Categories
+
+I created time-based features from `date_time` and encoded the main categorical weather fields.
+
+- Added `hour`, `day_of_week`, `month`, `year`, and `is_weekend`.
+- One-hot encoded `holiday` and `weather_main`.
+- The processed traffic dataset contains 48,187 rows and 33 columns.
+
