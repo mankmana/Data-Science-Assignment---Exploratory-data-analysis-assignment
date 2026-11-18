@@ -97,3 +97,34 @@ I created time-based features from `date_time` and encoded the main categorical 
 - One-hot encoded `holiday` and `weather_main`.
 - The processed traffic dataset contains 48,187 rows and 33 columns.
 
+## Step 14: Select and Scale Traffic Modeling Features
+
+I removed non-numeric date and text fields from the model inputs and standardized the selected traffic features. `traffic_volume` was kept separate as the prediction target.
+
+- The scaled feature set was prepared for clustering and machine-learning models.
+
+## Step 15: Perform K-Means Clustering
+
+I applied K-Means clustering with three clusters to the scaled traffic features.
+
+- Cluster 0: 24,461 records.
+- Cluster 1: 5,676 records.
+- Cluster 2: 18,050 records.
+- Silhouette score: 0.147.
+
+## Step 16: Remove Traffic Anomalies
+
+I removed invalid traffic and weather values and applied IQR filtering to temperature and traffic volume. Rainfall spikes were retained because they can represent valid weather events.
+
+- Original rows: 48,187.
+- Rows after anomaly removal: 48,177.
+- Rows removed: 10.
+
+## Step 17: Prepare Traffic Data for AutoML
+
+I created time-based features, removed date and high-cardinality text fields, encoded categorical variables, and used a chronological train-test split.
+
+- Training dataset: 38,541 rows and 36 columns.
+- Testing dataset: 9,636 rows and 36 columns.
+- Target column: `traffic_volume`.
+

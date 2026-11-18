@@ -101,3 +101,34 @@ I handled the missing Airbnb values before feature processing.
 I converted `room_type` and `neighbourhood_group` into numerical indicator columns using one-hot encoding.
 
 - The encoded Airbnb dataset contains 48,895 rows and 21 columns.
+
+## Step 14: Select and Scale Airbnb Modeling Features
+
+I removed identifier and text fields that were not suitable for numeric modeling and standardized the selected numeric features.
+
+- The scaled feature set was prepared for clustering and machine-learning models.
+
+## Step 15: Perform K-Means Clustering
+
+I applied K-Means clustering with three clusters to the scaled Airbnb features.
+
+- Cluster 0: 20,464 listings.
+- Cluster 1: 22,585 listings.
+- Cluster 2: 5,846 listings.
+- Silhouette score: 0.274.
+
+## Step 16: Remove Airbnb Anomalies
+
+I removed invalid values and IQR-based outliers from the main Airbnb numerical features.
+
+- Original rows: 48,895.
+- Rows after anomaly removal: 32,479.
+- Rows removed: 16,416.
+
+## Step 17: Prepare Airbnb Data for AutoML
+
+I created date-based review features, removed identifier and high-cardinality text fields, encoded categorical variables, and split the data for modeling.
+
+- Training dataset: 25,983 rows and 17 columns.
+- Testing dataset: 6,496 rows and 17 columns.
+- Target column: `price`.
